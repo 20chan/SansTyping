@@ -7,7 +7,8 @@
         xmlns:wpfanimated="http://wpfanimatedgif.codeplex.com"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="359" Icon="sans-256.png" ResizeMode="CanResizeWithGrip" WindowStyle="None" AllowsTransparency="True"
-        MouseDown="Window_MouseDown">
+        MouseDown="Window_MouseDown"
+        Topmost="True">
     <Window.Background>
         <SolidColorBrush Opacity="0" Color="White" />
     </Window.Background>
