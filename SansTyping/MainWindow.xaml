@@ -1,0 +1,18 @@
+﻿<Window x:Class="SansTyping.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SansTyping"
+        xmlns:wpfanimated="http://wpfanimatedgif.codeplex.com"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="359" Icon="sans-256.png" ResizeMode="CanResizeWithGrip" WindowStyle="None" AllowsTransparency="True"
+        MouseDown="Window_MouseDown">
+    <Window.Background>
+        <SolidColorBrush Opacity="0" Color="White" />
+    </Window.Background>
+    <Grid>
+        <Image wpfanimated:ImageBehavior.AnimatedSource="sans.gif"
+               wpfanimated:ImageBehavior.RepeatBehavior="1" wpfanimated:ImageBehavior.AutoStart="True" OpacityMask="White" />
+    </Grid>
+</Window>
