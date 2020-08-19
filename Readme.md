@@ -1,9 +1,11 @@
 # SansTyping
 
 <p align="center">
-  <img src="SansTyping/sans.gif" />
+  <a href="https://youtu.be/uAFA9AusfEQ"><img src="SansTyping/sans.gif" /></a>
   <br>
-<b>YOU TYPE SANS<b>
+<b>YOU TYPE SANS</b>
+  <br>
+Click image to see sans typing
 </p>
 
 Download v1.0 at [release](https://github.com/20chan/SansTyping/releases/)
