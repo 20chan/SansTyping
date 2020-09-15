@@ -8,4 +8,4 @@
 Click image to see sans typing
 </p>
 
-Download v1.0 at [release](https://github.com/20chan/SansTyping/releases/)
+Download v1.1 at [release](https://github.com/20chan/SansTyping/releases/)
