@@ -10,9 +10,12 @@ namespace SansTyping {
         private MediaPlayer[] players;
         private int index;
 
+        private int lastHit;
+
         public MainWindow() {
             InitializeComponent();
             Hook.KeyboardHook.KeyDown += KeyboardHook_KeyDown;
+            Hook.KeyboardHook.KeyUp += KeyboardHook_KeyUp;
             Hook.KeyboardHook.HookStart();
 
             players = new MediaPlayer[5];
@@ -28,7 +31,18 @@ namespace SansTyping {
         }
 
         private bool KeyboardHook_KeyDown(int vkCode) {
+            if (lastHit == vkCode) {
+                return true;
+            }
+            lastHit = vkCode;
             Play();
+            return true;
+        }
+
+        private bool KeyboardHook_KeyUp(int vkCode) {
+            if (lastHit == vkCode) {
+                lastHit = -1;
+            }
             return true;
         }
 
