@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Media;
 using System.Windows;
 using System.Windows.Input;
@@ -14,8 +15,8 @@ namespace SansTyping {
             Hook.KeyboardHook.KeyDown += KeyboardHook_KeyDown;
             Hook.KeyboardHook.HookStart();
 
-            players = new MediaPlayer[10];
-            var audioPath = new System.Uri($"file:///{Path.Combine(Directory.GetCurrentDirectory(), "SansSpeak.wav")}");
+            players = new MediaPlayer[5];
+            var audioPath = new Uri($"file:///{Path.Combine(Directory.GetCurrentDirectory(), "SansSpeak.wav")}");
             for (var i = 0; i < players.Length; i++) {
                 players[i] = new MediaPlayer();
                 players[i].Open(audioPath);
