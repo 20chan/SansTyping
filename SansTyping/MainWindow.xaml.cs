@@ -1,16 +1,25 @@
-﻿using System.Media;
+﻿using System.IO;
+using System.Media;
 using System.Windows;
 using System.Windows.Input;
+using System.Windows.Media;
 
 namespace SansTyping {
     public partial class MainWindow : Window {
-        private SoundPlayer player;
+        private MediaPlayer[] players;
+        private int index;
 
         public MainWindow() {
             InitializeComponent();
             Hook.KeyboardHook.KeyDown += KeyboardHook_KeyDown;
             Hook.KeyboardHook.HookStart();
-            player = new SoundPlayer("SansSpeak.wav");
+
+            players = new MediaPlayer[10];
+            var audioPath = new System.Uri($"file:///{Path.Combine(Directory.GetCurrentDirectory(), "SansSpeak.wav")}");
+            for (var i = 0; i < players.Length; i++) {
+                players[i] = new MediaPlayer();
+                players[i].Open(audioPath);
+            }
         }
 
         ~MainWindow() {
@@ -18,7 +27,7 @@ namespace SansTyping {
         }
 
         private bool KeyboardHook_KeyDown(int vkCode) {
-            player.Play();
+            Play();
             return true;
         }
 
@@ -27,8 +36,14 @@ namespace SansTyping {
                 this.DragMove();
             }
             else {
-                player.Play();
+                Play();
             }
+        }
+
+        private void Play() {
+            players[index].Stop();
+            players[index].Play();
+            index = (index + 1) % players.Length;
         }
     }
 }
